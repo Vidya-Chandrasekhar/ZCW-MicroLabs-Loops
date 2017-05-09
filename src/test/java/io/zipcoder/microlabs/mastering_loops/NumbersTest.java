@@ -71,10 +71,13 @@ public class NumbersTest {
     @Test
     public void powersTest(){
         //: Given
+        Numbers numbers = new Numbers();
+        String expected = "*** Output ***\n powers()\n2\n4\n8\n16\n32\n64\n128\n256";
 
         //: When
-
+        String actual = numbers.powers(8);
         //: Then
+        Assert.assertEquals("The two strings are equal", expected, actual);
     }
 
 }

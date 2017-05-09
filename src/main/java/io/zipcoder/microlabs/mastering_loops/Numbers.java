@@ -1,7 +1,6 @@
 package io.zipcoder.microlabs.mastering_loops;
 
 import java.util.Random;
-import javax.swing.*;
 
 public class Numbers {
 
@@ -10,55 +9,41 @@ public class Numbers {
 
     public String oneToTen() {
 
-        String stringOutput = "*** Output ***\n" + " oneToTen()\n";
-        String oneToTenOutput = "";
+        String stringOutput = "*** Output ***\n" + " oneToTen()";
 
-        for (int i = 1; i < 11; i++) {
-            if (i <= 9) {
-                oneToTenOutput = oneToTenOutput + Integer.toString(i) + "\n";
-            } else {
-                oneToTenOutput = oneToTenOutput + Integer.toString(i);
+        for (int i = 1; i <= 10; i++) {
 
-            }
+            stringOutput = stringOutput + "\n" + i;
+
         }
-        return stringOutput + oneToTenOutput;
+        return stringOutput;
     }
 
     public String oddNumbers() {
 
-        String stringOutput = "*** Output ***\n" + " oddNumbers()\n";
-        String oddNumbersOutput = "";
-
+        String stringOutput = "*** Output ***\n" + " oddNumbers()";
 
         for (int j = 1; j <= 20; j++) {
             if (j % 2 == 1 && j < 19) {
-                oddNumbersOutput = oddNumbersOutput + Integer.toString(j) + "\n";
-            } else if (j % 2 == 1 && j >= 19) {
-                oddNumbersOutput = oddNumbersOutput + Integer.toString(j);
+                stringOutput = stringOutput + "\n" + j;
             }
         }
-        return stringOutput + oddNumbersOutput;
+        return stringOutput;
     }
 
     public String squares() {
 
-        String stringOutput = "*** Output ***\n" + " squares()\n";
-        String squareOutput = "";
-
+        String stringOutput = "*** Output ***\n" + " squares()";
 
         int k = 1;
         while (k <= 10) {
             int sqr = k * k;
             k++;
-            if (k <= 10) {
-                squareOutput = squareOutput + Integer.toString(sqr) + "\n";
-            } else {
-                squareOutput = squareOutput + Integer.toString(sqr);
-
+            {
+                stringOutput = stringOutput + "\n" + sqr;
             }
-
         }
-        return stringOutput + squareOutput ;
+        return stringOutput;
     }
 
 
@@ -69,33 +54,41 @@ public class Numbers {
         Random rand = new Random();
         int n = rand.nextInt(10) + 1;
 
-        return  stringOutput + random4Output;}
-
+        return stringOutput + random4Output;
+    }
 
 
     public String even(int n) {
 
         String stringOutput = "*** Output ***\n" + " even()";
 
-        String evenOutput = "";
-
         for (int i = 1; i < n; i++) {
             if (i % 2 == 0) {
-                evenOutput = evenOutput + "\n" + i;
+                stringOutput = stringOutput + "\n" + i;
             }
         }
-        return stringOutput + evenOutput;
+        return stringOutput;
     }
 
-        public void main(String[] args) {
+    public String powers(int n) {
+        String stringOutput = "*** Output ***\n" + " powers()";
 
-            Numbers num = new Numbers();
-
-            num.oneToTen();
-            num.oddNumbers();
-            num.squares();
-            num.even(20);
+        for (int i = 1; i <= n; i++) {
+            stringOutput = stringOutput + "\n" + (int) Math.pow(2, i);
         }
+        return stringOutput;
+    }
+
+
+    public void main(String[] args) {
+
+        Numbers num = new Numbers();
+
+        num.oneToTen();
+        num.oddNumbers();
+        num.squares();
+        num.even(20);
+    }
 
 
 }
