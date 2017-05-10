@@ -1,86 +1,101 @@
 package io.zipcoder.microlabs.mastering_loops;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Numbers {
 
 
-    private String n;
-
     public String oneToTen() {
 
-        String stringOutput = "*** Output ***\n" + " oneToTen()";
-
+        List<Integer> oneToTenList = new ArrayList<Integer>();
         for (int i = 1; i <= 10; i++) {
-
-            stringOutput = stringOutput + "\n" + i;
-
+            oneToTenList.add(i);
         }
-        return stringOutput;
+        return createOutput(oneToTenList, "oneToTen()");
     }
 
     public String oddNumbers() {
 
-        String stringOutput = "*** Output ***\n" + " oddNumbers()";
+        List<Integer> oddNumbersList = new ArrayList<Integer>();
 
         for (int j = 1; j <= 20; j++) {
-            if (j % 2 == 1 && j < 19) {
-                stringOutput = stringOutput + "\n" + j;
+            if (j % 2 == 1) {
+                oddNumbersList.add(j);
             }
         }
-        return stringOutput;
+        return createOutput(oddNumbersList, "oddNumbers()");
+
     }
 
     public String squares() {
+        List<Integer> squaresList = new ArrayList<Integer>();
 
-        String stringOutput = "*** Output ***\n" + " squares()";
 
         int k = 1;
         while (k <= 10) {
             int sqr = k * k;
             k++;
             {
-                stringOutput = stringOutput + "\n" + sqr;
+                squaresList.add(sqr);
             }
         }
-        return stringOutput;
+        return createOutput(squaresList, "squares()");
+
     }
 
 
     public String random4() {
-        String stringOutput = "*** Output ***\n" + " squares()\n";
-        String random4Output = "";
+        List<Integer> random4List = new ArrayList<Integer>();
 
         Random rand = new Random();
-        int n = rand.nextInt(10) + 1;
-
-        return stringOutput + random4Output;
+        for (int i = 1; i <= 4; i++) {
+            int n = rand.nextInt(10) + 1;
+            random4List.add(n);
+        }
+        return createOutput(random4List, "random4()");
     }
 
 
     public String even(int n) {
 
-        String stringOutput = "*** Output ***\n" + " even()";
+        List<Integer> evenList = new ArrayList<Integer>();
 
         for (int i = 1; i < n; i++) {
             if (i % 2 == 0) {
-                stringOutput = stringOutput + "\n" + i;
+                evenList.add(i);
             }
         }
-        return stringOutput;
+        return createOutput(evenList, "even()");
     }
 
     public String powers(int n) {
+        List<Integer> powersList = new ArrayList<Integer>();
+
         String stringOutput = "*** Output ***\n" + " powers()";
 
         for (int i = 1; i <= n; i++) {
-            stringOutput = stringOutput + "\n" + (int) Math.pow(2, i);
+            powersList.add((int) Math.pow(2, i));
         }
-        return stringOutput;
+        return createOutput(powersList, "powers()");
+
+
     }
 
 
-    public void main(String[] args) {
+    private String createOutput(List<Integer> numberList, String methodName) {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("*** Output ***\n");
+        stringBuilder.append(" "+ methodName);
+        for (Integer num : numberList) {
+            stringBuilder.append("\n" + num);
+        }
+        return stringBuilder.toString();
+    }
+
+
+    public static void main(String[] args) {
 
         Numbers num = new Numbers();
 
