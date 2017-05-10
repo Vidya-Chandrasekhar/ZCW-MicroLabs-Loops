@@ -1,7 +1,9 @@
 package io.zipcoder.microlabs.mastering_loops;
 
+
 import org.junit.Assert;
 import org.junit.Test;
+
 
 public class NumbersTest {
 
@@ -47,12 +49,12 @@ public class NumbersTest {
     public void random4Test(){
         //: Given
         Numbers numbers = new Numbers();
-        String expected = "*** Output ***\n random4()\n1\n4\n9\n16\n25\n36\n49\n64\n81\n100";
-
 
         //: When
+        String actual = numbers.random4();
 
         //: Then
+        Assert.assertNotNull(actual);
     }
 
     @Test

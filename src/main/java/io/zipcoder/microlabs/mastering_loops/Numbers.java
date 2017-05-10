@@ -10,6 +10,7 @@ public class Numbers {
     public String oneToTen() {
 
         List<Integer> oneToTenList = new ArrayList<Integer>();
+
         for (int i = 1; i <= 10; i++) {
             oneToTenList.add(i);
         }
